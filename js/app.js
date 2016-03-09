@@ -2,25 +2,30 @@ var examen = angular.module('examen', ['ngRoute', 'examen.services'])
  
 examen.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $routeProvider
-        .when('/', {
-            templateUrl: 'views/welcome.html',
-            controller: 'WelcomeCtrl',
-            controllerAs: 'welcome'
-        })
-       .when('/', {
-            templateUrl: 'views/.html',
-            controller: 'MainCtrl',
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: '',
             controllerAs: ''
         })
-        .when('//:id', {
+        .when('/resume', {
+            templateUrl: 'views/resume.html',
+            controller: '',
+            controllerAs: ''
+        })
+        .when('/add', {
+            templateUrl: 'views/add.html',
+            controller: '',
+            controllerAs: ''
+        })
+        .when('/detail', {
             templateUrl: 'views/detail.html',
-            controller: 'DetailCtrl',
-            controllerAs: 'detail'
+            controller: '',
+            controllerAs: ''
         })
         .when('/error', {
             templateUrl: 'views/error.html',
-            controller: 'ErrorCtrl',
-            controllerAs: 'error'
+            controller: '',
+            controllerAs: ''
         })
         .otherwise({
             redirectTo: '/',

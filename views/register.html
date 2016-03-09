@@ -1,0 +1,27 @@
+<section>
+    <h2>Register</h2>
+    <form name="registerForm" novalidate="novalidate" class="form-group">
+        <div class="form-group">
+            <label for="user">Owner</label>
+            <input type="text" name="user" ng-model="username" required="required" class="form-control">
+            <span ng-show="!registerForm.user.$valid &amp;&amp; registerForm.user.$dirty" class="text-danger">The owner field is required.</span>
+        </div>
+        <div class="form-group">
+            <label for="money">Currency</label>
+            <select name="money" ng-model="moneyType" required="required" class="form-control" placeholder="Colones">
+                <option value="colones">Colones</option>
+                <option value="dolars">USD Dolars</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="account">Type</label>
+            <select name="account" ng-model="accType" required="required" class="form-control" placeholder="Corriente">
+                <option value="corriente">Corriente</option>
+                <option value="savings">Savings</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button ng-click="register()" ng-disabled="!registerForm.$valid" class="form-control btn btn-default">Register</button>
+        </div>
+    </form>
+</section>
