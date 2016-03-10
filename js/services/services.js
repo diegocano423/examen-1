@@ -2,40 +2,40 @@ angular.module('examen.services', [])
  .factory('saveService', [function ()  {
    var saveServiceFunctions = {
        
-       getContacts: function(){
+       getAccount: function(){
            // agarra un item de local storage 
-           var storageContacts = angular.fromJson(localStorage.getItem('contacts')) || [];
+           var storageAccount = angular.fromJson(localStorage.getItem('accounts')) || [];
            
            // añadir cuando fueron agregados
-           return storageContacts;
+           return storageAccount;
 
        },
-       saveContacts: function (pObject) {
+       saveAccount: function (pObject) {
            pObject.forEach(function (i, j) {
                i.id = j;
            });
-           localStorage.setItem('contacts', angular.toJson(pObject));
+           localStorage.setItem('accounts', angular.toJson(pObject));
        },
-       remove: function(index) {
-           var allContacts = saveServiceFunctions.getContacts();
-
-           if (index) {
-               allContacts.splice(index, 1);
-               saveServiceFunctions.saveContacts(allContacts);
-           }
-       },
-       getOneContact: function (pIndex) {
+       getOneAccount: function (pIndex) {
            if ( pIndex ) {
-               var allContacts = saveServiceFunctions.getContacts();
-               var newContacts = allContacts.filter(function(pObj) {
+               var allAccounts = saveServiceFunctions.getAccount();
+               var newAccounts = allAccounts.filter(function(pObj) {
                    return Number(pObj.id) === Number(pIndex);
                });
 
-               if ( newContacts && newContacts.length > 0 ) {
-                   return newContacts[0];
+               if ( newAccounts && newAccounts.length > 0 ) {
+                   return newAccounts[0];
                }    
           }
       },
+      remove: function(index) {
+           var allAccounts = saveServiceFunctions.getContacts();
+
+           if (index) {
+               allAccounts.splice(index, 1);
+               saveServiceFunctions.saveContacts(allAccounts);
+           }
+       },
    };
 
    return saveServiceFunctions;

@@ -1,0 +1,20 @@
+<section>
+	<h2>Account Resume</h2>
+	<div>
+	    <h3>Welcome! {{account.username}}</h2>
+	    <h4><small>Your account number is: {{account.id}}, <strong>Remember it to log in!</strong></h4>
+	    <p>Your balance is: {{account.balance}}</p>
+	    <p>These are are your last 10 movements in your account type: <strong>{{account.account}}</strong></p>
+	</div>
+	<div>
+		<table>
+			<tr ng-repeat="movements in movements">
+				<td> {{}} </td>
+			</tr>
+		</table>
+
+	<div>
+	    <a href="register" role="button" class="btn btn-default">Log Out</a>
+	    <a href="add" role="button" class="btn btn-success">Add Movement</a>
+	</div>
+</section>

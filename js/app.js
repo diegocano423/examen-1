@@ -4,13 +4,18 @@ examen.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
         $routeProvider
         .when('/register', {
             templateUrl: 'views/register.html',
-            controller: '',
-            controllerAs: ''
+            controller: 'RegisterCtrl',
+            controllerAs: 'register'
         })
-        .when('/resume', {
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl',
+            controllerAs: 'login'
+        })
+        .when('/resume/:id', {
             templateUrl: 'views/resume.html',
-            controller: '',
-            controllerAs: ''
+            controller: 'ResumeCtrl',
+            controllerAs: 'resume'
         })
         .when('/add', {
             templateUrl: 'views/add.html',
