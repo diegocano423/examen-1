@@ -5,12 +5,20 @@
 	    <h4><small>Your account number is: {{account.id}}, <strong>Remember it to log in!</strong></h4>
 	    <p>Your balance is: {{account.balance}}</p>
 	    <p>These are are your last 10 movements in your account type: <strong>{{account.account}}</strong></p>
-	    <p>{{account.movements}}</p>
 	</div>
 	<div>
-		<table>
-			<tr ng-repeat="movements in movements">
-				<td> {{}} </td>
+		<table class="table">
+			<tr>
+				<td>Date</td>
+				<td>Amount</td>
+				<td>Account Type</td>
+				<td>Detail</td>
+			</tr>
+			<tr ng-repeat="movements in account.movements">
+				<td> {{movements.date | date}} </td>
+				<td> {{movements.fare | currency}} </td>
+				<td> {{movements.type}} </td>
+				<td> {{movements.detail}} </td>
 			</tr>
 		</table>
 	<div>

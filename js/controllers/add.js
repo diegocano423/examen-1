@@ -5,7 +5,7 @@ angular.module('examen')
     $scope.allAccs = saveService.getAccount();
     $scope.account = saveService.getOneAccount(idOfAccount);
     $scope.fare;
-    $scope.detail = '';
+    $scope.descriptionMovement = '';
     $scope.movementType = '';
 
     $scope.clean = function(){
@@ -33,7 +33,7 @@ angular.module('examen')
         	date: new Date(),
         	type: $scope.movementType,
         	fare: $scope.fare,
-        	detail: $scope.detail
+        	detail: $scope.descriptionMovement
         }
 
         saveMovement(movementInfo);
