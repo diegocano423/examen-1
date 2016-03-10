@@ -3,7 +3,7 @@
 	<div>
 	    <h3>Welcome! {{account.username}}</h2>
 	    <h4><small>Your account number is: {{account.id}}, <strong>Remember it to log in!</strong></h4>
-	    <p>Your balance is: {{account.balance}}</p>
+	    <p>Your balance is: {{account.balance | currency}}</p>
 	    <p>These are are your last 10 movements in your account type: <strong>{{account.account}}</strong></p>
 	</div>
 	<div>
@@ -14,7 +14,7 @@
 				<td>Account Type</td>
 				<td>Detail</td>
 			</tr>
-			<tr ng-repeat="movements in account.movements">
+			<tr ng-repeat="movements in account.movements |  orderBy:'-date' | limitTo:quantity">
 				<td> {{movements.date | date}} </td>
 				<td> {{movements.fare | currency}} </td>
 				<td> {{movements.type}} </td>

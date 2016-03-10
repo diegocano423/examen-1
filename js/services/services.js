@@ -29,6 +29,9 @@ angular.module('examen.services', [])
           }
       },
       saveMovement: function(pObject){
+           pObject.forEach(function (i, j) {
+               i.id = j;
+           });
           
            localStorage.setItem('accounts', angular.toJson(pObject));
        },
