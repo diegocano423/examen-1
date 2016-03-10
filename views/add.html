@@ -7,12 +7,19 @@
             <span ng-show="!movementForm.fare.$valid &amp;&amp; movementForm.fare.$dirty" class="text-danger">The movement fare is required for creating a new movement for your account.</span>
         </div>
         <div class="form-group">
+            <label for="type">Movement Type: </label>
+            <select name="type" ng-model="movementType" required="required" class="form-control" placeholder="Deposit">
+                <option value="deposit">Deposit</option>
+                <option value="whitdraw">Whitdraw</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="detail">Movement Detail: </label>
-            <input type="textarea" name="detail" ng-model="description" required="required" class="form-control">
+            <input type="text" name="detail" ng-model="description" required="required" class="form-control">
             <span ng-show="!movementForm.detail.$valid &amp;&amp; movementForm.detail.$dirty" class="text-danger">Please type the description of the movement.</span>
         </div>
         <div class="form-group">
-        	<button class="btn btn-success" ng-disabled="!movementFrom.$valid" ng-click="addMovement">Add Movement</button>
+        	<button class="btn btn-success" ng-disabled="!movementForm.$valid" ng-click="addMovement()">Add Movement</button>
         	<a ng-href="/resume/{{account.id}}" role="button" class="btn btn-danger">Return</a>
         </div>
     </form>

@@ -28,6 +28,10 @@ angular.module('examen.services', [])
                }    
           }
       },
+      saveMovement: function(pObject){
+          
+           localStorage.setItem('accounts', angular.toJson(pObject));
+       },
       remove: function(index) {
            var allAccounts = saveServiceFunctions.getContacts();
 

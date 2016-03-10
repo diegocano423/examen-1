@@ -31,7 +31,7 @@ angular.module('examen')
         		money: $scope.moneyType,
                 account: $scope.accType,
                 balance: 0,
-                movements: {} 
+                movements: []
         	};
 
         	saveOnStorage(accountInfo);
