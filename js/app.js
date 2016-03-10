@@ -17,10 +17,10 @@ examen.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
             controller: 'ResumeCtrl',
             controllerAs: 'resume'
         })
-        .when('/add', {
+        .when('/resume/:id/add', {
             templateUrl: 'views/add.html',
-            controller: '',
-            controllerAs: ''
+            controller: 'AddCtrl',
+            controllerAs: 'add'
         })
         .when('/detail', {
             templateUrl: 'views/detail.html',

@@ -1,5 +1,5 @@
 angular.module('examen')
-    .controller('LoginCtrl', ['$scope', 'saveService', '$location', '$routeParams', function($scope, saveService, $location, $routeParams) {
+    .controller('LoginCtrl', ['$scope', 'saveService', '$location', function($scope, saveService, $location, $routeParams) {
     $scope.registeredAccounts = saveService.getAccount();
  
     $scope.loginAccount = function(){

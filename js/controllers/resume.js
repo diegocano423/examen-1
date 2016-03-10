@@ -4,8 +4,5 @@ angular.module('examen')
     var idOfAccount = $routeParams.id;
     $scope.account = saveService.getOneAccount(idOfAccount);
 
-    $scope.deleteContact = function() {
-        saveService.remove(idOfContact);
-        $location.path('/contact');
-    };  
+    
 }])
