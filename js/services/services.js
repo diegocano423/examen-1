@@ -2,6 +2,11 @@ angular.module('examen.services', [])
  .factory('saveService', [function ()  {
    var saveServiceFunctions = {
        
+       /**
+        * Description: Agarra todas las accounts guardadas en localStorage.
+        * @method getAccount
+        * @return storageAccount
+        */
        getAccount: function(){
            // agarra un item de local storage 
            var storageAccount = angular.fromJson(localStorage.getItem('accounts')) || [];
@@ -10,12 +15,24 @@ angular.module('examen.services', [])
            return storageAccount;
 
        },
+       /**
+        * Description: Salva cuentas en localStorage.
+        * @method saveAccount
+        * @param {} pObject
+        * @return 
+        */
        saveAccount: function (pObject) {
            pObject.forEach(function (i, j) {
                i.id = j;
            });
            localStorage.setItem('accounts', angular.toJson(pObject));
        },
+       /**
+        * Description: Agarra una cuenta en especifico.
+        * @method getOneAccount
+        * @param {} pIndex
+        * @return 
+        */
        getOneAccount: function (pIndex) {
            if ( pIndex ) {
                var allAccounts = saveServiceFunctions.getAccount();
@@ -28,6 +45,12 @@ angular.module('examen.services', [])
                }    
           }
       },
+      /**
+       * Description: Guarda y asigna un id al pObjetct, en este caso el objeto movement.
+       * @method saveMovement
+       * @param {} pObject
+       * @return 
+       */
       saveMovement: function(pObject){
            pObject.forEach(function (i, j) {
                i.id = j;
@@ -35,6 +58,12 @@ angular.module('examen.services', [])
           
            localStorage.setItem('accounts', angular.toJson(pObject));
        },
+      /**
+       * Description: Remueve un movimiento de la cuenta.
+       * @method remove
+       * @param {} index
+       * @return 
+       */
       remove: function(index) {
            var allAccounts = saveServiceFunctions.getAccount();
 

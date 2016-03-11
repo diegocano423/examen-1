@@ -5,7 +5,7 @@
 	    <h4><small>Your account number is: {{account.id}}, <strong>Remember it to log in!</strong></h4>
 	    <p>Your balance is: {{account.balance | currency}}</p>
 	    <p>Account type: <strong>{{account.account}}</strong></p>
-	    <p ng-hide="account.movements.length < 10">These are are your last 10 movements of your account:</p> 
+	    <p ng-hide="account.movements.length < 10">These are the last 10 movements on your account:</p> 
 	</div>
 	<div>
 		<div ng-hide="account.movements.length > 0">

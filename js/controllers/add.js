@@ -8,11 +8,22 @@ angular.module('examen')
     $scope.descriptionMovement = '';
     $scope.movementType = '';
 
+    /**
+     * Description: limpia los inputs.
+     * @method clean
+     * @return 
+     */
     $scope.clean = function(){
     	$scope.fare = '';
     	$scope.detail = '';
     };
 
+    /**
+     * Description: Guarda los movimientos en la cuenta actual y llama a la funcion calculate.
+     * @method saveMovement
+     * @param {} pObject
+     * @return 
+     */
     var saveMovement = function (pObject) {
         var balance = {
             whitdraw: 0,
@@ -30,6 +41,13 @@ angular.module('examen')
         		};
         	};
 
+            /**
+             * Description: se encarga de actualizar el saldo de la cuenta dependiendo del tipo de movimiento.
+             * @method calculate
+             * @param {} p
+             * @param {} type
+             * @return 
+             */
             var calculate = function (p, type) {
                 balance[type] += p;
             }
@@ -43,6 +61,12 @@ angular.module('examen')
         };
     };
 
+    /**
+     * Description: Se encarga de crear el objeto que sera usado como parametro en saveMoment(),
+       lo manda, llama a funcion clean() y redirecciona al resume de la cuenta actual.
+     * @method addMovement
+     * @return 
+     */
     $scope.addMovement = function(){
         var movementInfo = {
         	date: new Date(),
