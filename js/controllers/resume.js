@@ -3,7 +3,5 @@ angular.module('examen')
     
     var idOfAccount = $routeParams.id;
     $scope.account = saveService.getOneAccount(idOfAccount);
-    $scope.quantity = 10;
-
     
 }])

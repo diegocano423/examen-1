@@ -36,11 +36,10 @@ angular.module('examen.services', [])
            localStorage.setItem('accounts', angular.toJson(pObject));
        },
       remove: function(index) {
-           var allAccounts = saveServiceFunctions.getContacts();
+           var allAccounts = saveServiceFunctions.getAccount();
 
            if (index) {
-               allAccounts.splice(index, 1);
-               saveServiceFunctions.saveContacts(allAccounts);
+               allAccounts.movements.splice(index, 1);
            }
        },
    };

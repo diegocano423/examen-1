@@ -56,5 +56,4 @@ angular.module('examen')
         $scope.movementForm.$setPristine();
         $location.path("/resume/" + idOfAccount);
     };
-    console.log($scope.account.movements);
 }])

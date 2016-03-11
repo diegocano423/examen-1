@@ -1,0 +1,29 @@
+<section>
+    <section>
+	    <h2>Movement Details</h2>
+	    <p>In this section you can see the details of your movements.</p>
+	</section>
+	<section>
+		<table class="table table-bordered">
+			<tr>
+				<td>Movement Number</td>
+				<td>Date</td>
+				<td>Amount</td>
+				<td>Transaction Type</td>
+				<td>Detail</td>
+				<td>Accions</td>
+			</tr>
+			<tr>
+				<td> {{currMovement.id}} </td>
+				<td> {{currMovement.date | date}} </td>
+				<td> {{currMovement.fare | currency}} </td>
+				<td> {{currMovement.type}} </td>
+				<td> {{currMovement.detail}} </td>
+				<td><a>Edit</a>/<a>Eliminar</a></td>
+			</tr>
+		</table>
+	</section>
+	<section>
+		<a role="button" class="btn btn-primary" ng-href="/resume/{{currAccount.id}}">Resume</a>
+		<a role="button" class="btn btn-success" ng-href="/resume/{{currAccount.id}}/add">Add</a>
+</section>
