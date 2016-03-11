@@ -1,20 +1,16 @@
 angular.module('examen')
-    .controller('DetailCtrl', ['$scope', 'saveService', '$routeParams', '$location', '$route', function($scope, saveService, $routeParams, $location, $route) {
+    .controller('DetailCtrl', ['$scope', 'saveService', '$routeParams', '$location', function($scope, saveService, $routeParams, $location, $route) {
     
-    var idOfMovement = $routeParams;
-    var idOfAccount;
+    
+    var idOfAccount = $routeParams.id;
+    var idOfMovement = $routeParams.idof;
     $scope.accounts = saveService.getAccount();
-
-    
-    for (var i = 0; i < $scope.accounts.length; i++) {
-    	$scope.accounts[i].id === idOfAccount;
-    	console.log('entered2' + idOfAccount);
-    };
-
-    
-    $scope.currMovement;
     $scope.currAcc = saveService.getOneAccount(idOfAccount);
-    
+
+    console.log(idOfMovement);
+
+     
+    $scope.currMovement;
     
     
     console.log($routeParams);
