@@ -5,7 +5,6 @@ angular.module('examen')
         $scope.password = '';
         $scope.moneyType = '';
         $scope.accType = '';
-
         var cleanInputs = function(){
             $scope.username = '';
             $scope.password = '';
