@@ -63,7 +63,7 @@ angular.module('examen')
 
     /**
      * Description: Se encarga de crear el objeto que sera usado como parametro en saveMoment(),
-       lo manda, llama a funcion clean() y redirecciona al resume de la cuenta actual.
+     * lo manda, llama a funcion clean() y redirecciona al resume de la cuenta actual.
      * @method addMovement
      * @return 
      */

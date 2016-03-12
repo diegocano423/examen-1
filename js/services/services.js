@@ -68,7 +68,7 @@ angular.module('examen.services', [])
            var allAccounts = saveServiceFunctions.getAccount();
 
            if (index) {
-               allAccounts.movements.splice(index, 1);
+               allAccounts.movements[index].splice(index, 1);
            }
        },
    };

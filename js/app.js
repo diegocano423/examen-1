@@ -27,11 +27,6 @@ examen.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
             controller: 'DetailCtrl',
             controllerAs: 'detail'
         })
-        .when('/error', {
-            templateUrl: 'views/error.html',
-            controller: '',
-            controllerAs: ''
-        })
         .otherwise({
             redirectTo: '/',
         });

@@ -3,7 +3,6 @@ angular.module('examen')
         $scope.allAccounts = saveService.getAccount();
         $scope.username = '';
         $scope.password = '';
-        $scope.moneyType = '';
         $scope.accType = '';
         /**
          * Description: Se encarga de limpiar los inputs usados en la creacion de la cuenta.
@@ -13,7 +12,6 @@ angular.module('examen')
         var cleanInputs = function(){
             $scope.username = '';
             $scope.password = '';
-            $scope.moneyType = '';
             $scope.accType = '';
         };
 
@@ -36,7 +34,7 @@ angular.module('examen')
 
         /**
          * Description: Crea el objeto usado como parametro en la funcion saveOnStorage(),
-           llama a la funcion cleanInputs() y redirecciona al resume de la cuenta.
+         * llama a la funcion cleanInputs() y redirecciona al resume de la cuenta.
          * @method registerAccount
          * @return 
          */
@@ -44,7 +42,6 @@ angular.module('examen')
         	var accountInfo = {
         		username: $scope.username,
                 password: $scope.password,
-        		money: $scope.moneyType,
                 account: $scope.accType,
                 balance: 0,
                 movements: []
@@ -55,5 +52,4 @@ angular.module('examen')
             $scope.registerForm.$setPristine();
             $location.path('/resume/' + accountInfo.id);
         };
-        console.log($scope.allAccounts);
-}])
+    }])

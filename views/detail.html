@@ -19,9 +19,22 @@
 				<td> {{currMovement.fare | currency}} </td>
 				<td> {{currMovement.type}} </td>
 				<td> {{currMovement.detail}} </td>
-				<td><a>Edit</a>/<a>Eliminar</a></td>
+				<td><button class="btn btn-default" role="button" ng-click="startEdit(true)">Edit</button></td>
 			</tr>
 		</table>
+	</section>
+	<section ng-hide="edit === false">
+		<h2>Edit current movement detail</h2>
+        <form name="movementEdit" novalidate="novalidate" class="form-group">
+        <div class="form-group">
+            <label for="detail">Movement Detail: </label>
+            <input type="text" name="detail" ng-model="newDescription" required="required" class="form-control">
+            <span ng-show="!movementEdit.detail.$valid &amp;&amp; movementEdit.detail.$dirty" class="text-danger">Please type the description of the movement.</span>
+        </div>
+        <div class="form-group">
+        	<button class="btn btn-success" ng-disabled="!movementEdit.$valid" ng-click="editMovement()">Edit</button>
+        </div>
+    </form>
 	</section>
 	<section>
 		<a role="button" class="btn btn-primary" ng-href="/resume/{{currAcc.id}}">Resume</a>
