@@ -58,19 +58,6 @@ angular.module('examen.services', [])
           
            localStorage.setItem('accounts', angular.toJson(pObject));
        },
-      /**
-       * Description: Remueve un movimiento de la cuenta.
-       * @method remove
-       * @param {} index
-       * @return 
-       */
-      remove: function(index) {
-           var allAccounts = saveServiceFunctions.getAccount();
-
-           if (index) {
-               allAccounts.movements[index].splice(index, 1);
-           }
-       },
    };
 
    return saveServiceFunctions;
